@@ -1,100 +1,208 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Rosa SRLS — Elettricisti | Fotovoltaico • Verde Pubblico • Scavi</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Rosa SRLS — Elettricisti | Fotovoltaico • Verde Pubblico • Scavi</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-
-  <header>
-    <div class="brand">
-      <div class="logo">
-        <img src="images/logo-la-rosa.png" alt="Logo La Rosa SRLS">
-      </div>
-      <div>
-        <h1>La Rosa SRLS</h1>
-        <p>Elettricisti • Fotovoltaico • Scavi & Bonifiche</p>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- Sezione Categorie -->
-    <section class="categorie">
-      <h2>Categorie di intervento</h2>
-
-      <!-- Radio button e label (fratelli diretti di .descrizioni) -->
-      <input type="radio" id="verde" name="categoria" checked>
-      <label for="verde" class="btn-categoria">🌳 Verde pubblico</label>
-
-      <input type="radio" id="fotovoltaico" name="categoria">
-      <label for="fotovoltaico" class="btn-categoria">☀ Fotovoltaici</label>
-
-      <input type="radio" id="pulizia" name="categoria">
-      <label for="pulizia" class="btn-categoria">💧 Pulizia pannelli</label>
-
-      <input type="radio" id="scavi" name="categoria">
-      <label for="scavi" class="btn-categoria">🚜 Scavi e bonifiche</label>
-
-      <!-- Contenitore descrizioni -->
-      <div class="descrizioni">
-        <div class="descrizione verde">
-          <h3>🌳 Verde pubblico</h3>
-          <p>Progettazione e manutenzione del verde urbano, potature, impianti di irrigazione e riqualificazione di aree pubbliche. Tutti i lavori vengono eseguiti in sicurezza e nel rispetto delle normative ambientali vigenti.</p>
-        </div>
-        <div class="descrizione fotovoltaico">
-          <h3>☀ Fotovoltaici</h3>
-          <p>Installazione e manutenzione di impianti fotovoltaici chiavi in mano, gestione pratiche GSE e ottimizzazione dei sistemi per massimizzare la produzione energetica. Servizio completo e professionale.</p>
-        </div>
-        <div class="descrizione pulizia">
-          <h3>💧 Pulizia pannelli</h3>
-          <p>Pulizia professionale dei pannelli solari con detergenti ecologici e sistemi ad acqua osmotizzata. Migliora l'efficienza dell'impianto e ne prolunga la durata nel tempo.</p>
-        </div>
-        <div class="descrizione scavi">
-          <h3>🚜 Scavi e bonifiche</h3>
-          <p>Scavi tecnici, movimento terra e bonifiche ambientali con mezzi certificati. Operiamo in sicurezza rispettando tutte le normative vigenti per garantire un servizio completo e affidabile.</p>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <a class="logo" href="#inizio" aria-label="La Rosa SRLS">
+          <img src="images/logo-la-rosa.png" alt="Logo La Rosa SRLS">
+        </a>
+        <div class="brand-text">
+          <p class="eyebrow">Servizi professionali certificati</p>
+          <h1 id="inizio">La Rosa SRLS</h1>
+          <p class="tagline">Elettricisti • Fotovoltaico • Verde pubblico • Scavi e bonifiche</p>
         </div>
       </div>
-    </section>
-
-    <!-- Sezione Recensioni -->
-    <section class="recensioni">
-      <h2>💬 Cosa dicono i nostri clienti</h2>
-      <div class="recensioni-container">
-        <div class="recensione">
-          <p class="testo">“Servizio impeccabile per l’installazione dei pannelli fotovoltaici. Puntuali e professionali!”</p>
-          <div class="autore">— Mario Rossi, Roma</div>
-          <div class="stelle">⭐⭐⭐⭐⭐</div>
-        </div>
-        <div class="recensione">
-          <p class="testo">“Ottimo lavoro di manutenzione del verde pubblico. Squadra efficiente e disponibile.”</p>
-          <div class="autore">— Comune di Latina</div>
-          <div class="stelle">⭐⭐⭐⭐⭐</div>
-        </div>
-        <div class="recensione">
-          <p class="testo">“Hanno effettuato la pulizia dei pannelli con grande cura. Produzione aumentata del 10%!”</p>
-          <div class="autore">— Laura Bianchi, Pomezia</div>
-          <div class="stelle">⭐⭐⭐⭐⭐</div>
-        </div>
+      <nav class="main-nav" aria-label="Sezioni del sito">
+        <a href="#categorie">Servizi</a>
+        <a href="#perche-noi">Perché sceglierci</a>
+        <a href="#recensioni">Recensioni</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+      <div class="header-actions">
+        <a class="cta" href="tel:+390773123456">📞 0773 123456</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Cambia modalità di visualizzazione">
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          <span class="theme-toggle__label">Dark mode</span>
+        </button>
       </div>
-    </section>
+    </header>
 
-  </main>
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Operativi nel Lazio e nel Centro Italia</p>
+          <h2>Energia, ambiente e infrastrutture gestite da un unico partner</h2>
+          <p class="hero__text">Progettiamo, installiamo e manteniamo impianti fotovoltaici, aree verdi e lavori di scavo per enti pubblici e aziende. Interventi rapidi, coordinamento completo e assistenza post-lavoro.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="mailto:info@larosasrls.it">✉️ Richiedi un preventivo</a>
+            <a class="btn btn--ghost" href="#categorie">Scopri i servizi</a>
+          </div>
+        </div>
+        <ul class="hero__highlights" aria-label="Risultati e garanzie">
+          <li>
+            <span class="highlight__value">20+</span>
+            <span class="highlight__label">Anni di esperienza</span>
+          </li>
+          <li>
+            <span class="highlight__value">98%</span>
+            <span class="highlight__label">Clienti soddisfatti</span>
+          </li>
+          <li>
+            <span class="highlight__value">48h</span>
+            <span class="highlight__label">Tempo medio di intervento</span>
+          </li>
+        </ul>
+      </section>
 
-  <footer>
-    <p>© <span id="year"></span> La Rosa SRLS — Tutti i diritti riservati</p>
-  </footer>
+      <section id="perche-noi" class="feature-grid">
+        <h2>Perché scegliere La Rosa SRLS</h2>
+        <div class="feature-grid__items">
+          <article class="feature-card">
+            <h3>Squadre certificate</h3>
+            <p>Personale qualificato e aggiornato sulle norme CEI, con mezzi e attrezzature di proprietà per garantire interventi rapidi e sicuri.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Gestione completa delle pratiche</h3>
+            <p>Dalla progettazione alla consegna della documentazione, coordiniamo fornitori e uffici tecnici riducendo tempi e burocrazia.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Monitoraggio e manutenzione</h3>
+            <p>Piani programmati, assistenza su chiamata e reportistica chiara per mantenere impianti e aree verdi sempre efficienti.</p>
+          </article>
+        </div>
+      </section>
 
-</div>
+      <section id="categorie" class="categorie">
+        <div class="section-heading">
+          <h2>Categorie di intervento</h2>
+          <p>Scegli un ambito per vedere cosa possiamo fare per te.</p>
+        </div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+        <div class="categorie__selector" role="tablist" aria-label="Categorie di intervento">
+          <input type="radio" id="tab-verde" name="categoria" checked>
+          <label for="tab-verde" role="tab" aria-controls="panel-verde">🌳 Verde pubblico</label>
 
+          <input type="radio" id="tab-fotovoltaico" name="categoria">
+          <label for="tab-fotovoltaico" role="tab" aria-controls="panel-fotovoltaico">☀ Fotovoltaici</label>
+
+          <input type="radio" id="tab-pulizia" name="categoria">
+          <label for="tab-pulizia" role="tab" aria-controls="panel-pulizia">💧 Pulizia pannelli</label>
+
+          <input type="radio" id="tab-scavi" name="categoria">
+          <label for="tab-scavi" role="tab" aria-controls="panel-scavi">🚜 Scavi e bonifiche</label>
+
+          <div class="categorie__panels">
+            <article id="panel-verde" class="categorie__panel" role="tabpanel">
+              <h3>🌳 Verde pubblico</h3>
+              <p>Progettazione, potature, irrigazione e riqualificazione di aree urbane. Lavoriamo in quota in sicurezza, gestendo cantieri anche in contesti ad alta affluenza.</p>
+              <ul>
+                <li>Progettazione e realizzazione di parchi e giardini</li>
+                <li>Manutenzione periodica e sfalcio aree verdi</li>
+                <li>Installazione di impianti di irrigazione automatizzati</li>
+              </ul>
+            </article>
+            <article id="panel-fotovoltaico" class="categorie__panel" role="tabpanel">
+              <h3>☀ Fotovoltaici</h3>
+              <p>Soluzioni chiavi in mano per impianti industriali e pubblici, con analisi preliminare, installazione certificata e assistenza GSE.</p>
+              <ul>
+                <li>Audit energetico e studio di fattibilità</li>
+                <li>Installazione di impianti su tetto o a terra</li>
+                <li>Monitoraggio e manutenzione programmata</li>
+              </ul>
+            </article>
+            <article id="panel-pulizia" class="categorie__panel" role="tabpanel">
+              <h3>💧 Pulizia pannelli</h3>
+              <p>Trattamenti con acqua osmotizzata e detergenti green per aumentare la resa dell'impianto e prevenire l'usura dei moduli.</p>
+              <ul>
+                <li>Pulizie programmate e su richiesta</li>
+                <li>Report con confronto dati di produzione</li>
+                <li>Verifiche visive e termografiche</li>
+              </ul>
+            </article>
+            <article id="panel-scavi" class="categorie__panel" role="tabpanel">
+              <h3>🚜 Scavi e bonifiche</h3>
+              <p>Movimento terra, posa sottoservizi e bonifiche ambientali con mezzi certificati e gestione completa della sicurezza in cantiere.</p>
+              <ul>
+                <li>Scavi tecnici per sottoservizi e fibra ottica</li>
+                <li>Bonifiche di aree inquinate e gestione rifiuti</li>
+                <li>Ripristino e consolidamento del terreno</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="recensioni" class="testimonials">
+        <h2>💬 Cosa dicono i nostri clienti</h2>
+        <div class="testimonials__list">
+          <figure class="testimonial">
+            <blockquote>“Installazione impeccabile del nuovo impianto fotovoltaico. Hanno gestito pratiche e collaudo senza intoppi.”</blockquote>
+            <figcaption>
+              <span class="name">Mario Rossi</span>
+              <span class="location">Roma</span>
+              <span class="rating" aria-label="Valutazione 5 su 5">★★★★★</span>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <blockquote>“Squadra precisa e rapida nella manutenzione del verde pubblico. Collaborazione trasparente e affidabile.”</blockquote>
+            <figcaption>
+              <span class="name">Comune di Latina</span>
+              <span class="location">Servizio Ambiente</span>
+              <span class="rating" aria-label="Valutazione 5 su 5">★★★★★</span>
+            </figcaption>
+          </figure>
+          <figure class="testimonial">
+            <blockquote>“Pulizia dei pannelli fotovoltaici professionale: produzione aumentata del 12% rispetto all'anno precedente.”</blockquote>
+            <figcaption>
+              <span class="name">Laura Bianchi</span>
+              <span class="location">Pomezia</span>
+              <span class="rating" aria-label="Valutazione 5 su 5">★★★★★</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contatti" class="contact">
+        <div class="contact__card">
+          <h2>Richiedi un sopralluogo gratuito</h2>
+          <p>Raccontaci le tue esigenze: prepareremo un piano d'azione e un preventivo dettagliato entro 48 ore.</p>
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="tel:+390773123456">Chiama ora</a>
+            <a class="btn btn--ghost" href="mailto:info@larosasrls.it">Scrivici una mail</a>
+          </div>
+        </div>
+        <dl class="contact__details">
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:info@larosasrls.it">info@larosasrls.it</a></dd>
+          </div>
+          <div>
+            <dt>Telefono</dt>
+            <dd><a href="tel:+390773123456">0773 123456</a></dd>
+          </div>
+          <div>
+            <dt>Sede operativa</dt>
+            <dd>Via delle Industrie 25, Latina (LT)</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> La Rosa SRLS — Tutti i diritti riservati</p>
+      <p class="footer-note">Iscrizione Albo Gestori Ambientali • Certificazioni SOA categorie OS30, OG3</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
