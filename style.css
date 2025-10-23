@@ -1,51 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
 :root {
-  --accent: #0f9d58;
-  --accent-2: #1565c0;
-  --bg: #f7fafb;
-  --card: #ffffff;
-  --shadow: 0 8px 24px rgba(0,0,0,0.08);
-  --radius: 12px;
-  --muted: #6b7280;
-  --transition: all 0.4s ease;
-  --font: 'Inter', system-ui, sans-serif;
+  --color-primary: #176b87;
+  --color-primary-dark: #0f4f63;
+  --color-accent: #ffb703;
+  --color-surface: #ffffff;
+  --color-muted: #5f6c7b;
+  --color-background: #f1f5f9;
+  --color-heading: #0f172a;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --shadow-soft: 0 18px 36px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: var(--font);
-  background: var(--bg);
-  color: #0f1724;
-  display: flex;
-  justify-content: center;
-  padding: 30px 20px;
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(23, 107, 135, 0.18), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(255, 183, 3, 0.16), transparent 55%),
+    var(--color-background);
+  color: var(--color-heading);
+  min-height: 100vh;
 }
 
-.container {
-  width: 100%;
-  max-width: 900px;
+a {
+  color: inherit;
 }
 
-/* Header */
-header {
+a:hover,
+a:focus-visible {
+  color: var(--color-primary);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  margin-bottom: 25px;
+  gap: 24px;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .logo {
-  width: 70px;
-  height: 70px;
-  border-radius: var(--radius);
+  display: inline-flex;
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  background: white;
+  box-shadow: var(--shadow-soft);
+  background: #fff;
 }
 
 .logo img {
@@ -54,99 +82,567 @@ header {
   object-fit: cover;
 }
 
-/* Categorie */
-.categorie {
-  background: var(--card);
-  padding: 25px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-align: center;
-  position: relative;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-input[type="radio"] {
-  display: none;
+.brand-text .eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
 }
 
-.btn-categoria {
-  display: inline-block;
-  background: var(--accent-2);
-  color: white;
-  padding: 12px 18px;
-  margin: 5px;
-  border-radius: var(--radius);
-  cursor: pointer;
+.brand-text h1 {
+  margin: 0;
+  font-size: 1.95rem;
+  color: var(--color-heading);
+}
+
+.brand-text .tagline {
+  margin: 0;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.main-nav {
+  display: inline-flex;
+  justify-content: center;
+  gap: 18px;
   font-weight: 600;
-  transition: all 0.4s ease;
 }
 
-.btn-categoria:hover {
-  background: #0c4a99;
-  transform: translateY(-2px);
+.main-nav a {
+  text-decoration: none;
+  color: var(--color-muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: var(--transition);
 }
 
-input#verde:checked + label[for="verde"],
-input#fotovoltaico:checked + label[for="fotovoltaico"],
-input#pulizia:checked + label[for="pulizia"],
-input#scavi:checked + label[for="scavi"] {
-  background: var(--accent);
-  transform: scale(1.05);
-  box-shadow: 0 0 0 3px rgba(15,157,88,0.3);
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: rgba(23, 107, 135, 0.12);
+  color: var(--color-primary);
 }
 
-/* Descrizioni */
-.descrizioni {
-  position: relative;
-  margin-top: 20px;
-  min-height: 250px;
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.descrizione {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255,255,255,0.95);
-  border-radius: var(--radius);
-  padding: 25px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-  transition: all 0.5s ease;
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: rgba(23, 107, 135, 0.15);
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-input#verde:checked ~ .descrizioni .verde,
-input#fotovoltaico:checked ~ .descrizioni .fotovoltaico,
-input#pulizia:checked ~ .descrizioni .pulizia,
-input#scavi:checked ~ .descrizioni .scavi {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.cta:hover,
+.cta:focus-visible {
+  background: rgba(23, 107, 135, 0.25);
+  color: var(--color-primary-dark);
 }
 
-.descrizione h3 { margin-bottom: 12px; }
-.descrizione p { line-height: 1.6; color: #374151; }
-
-/* Recensioni */
-.recensioni {
-  background: var(--card);
-  padding: 40px 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin: 30px 0;
-  text-align: center;
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: var(--color-surface);
+  font-weight: 600;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-.recensioni-container {
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: rgba(23, 107, 135, 0.45);
+  box-shadow: 0 0 0 4px rgba(23, 107, 135, 0.15);
+  outline: none;
+}
+
+.theme-toggle__icon {
+  font-size: 1rem;
+}
+
+.theme-toggle__label {
+  font-size: 0.95rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(23, 107, 135, 0.95), rgba(15, 79, 99, 0.92));
+  box-shadow: var(--shadow-soft);
 }
 
-.recensione {
-  padding: 20px;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg,#fff,#f5f7fa);
-  box-shadow: var(--shadow);
-  transition: transform
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(255, 183, 3, 0.35), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(23, 107, 135, 0.5), transparent 60%);
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 620px;
+}
+
+.hero__eyebrow {
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  line-height: 1.1;
+}
+
+.hero__text {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #1b1b1b;
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: #ffcc4d;
+  color: #0f172a;
+}
+
+.btn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  background: transparent;
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero__highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__highlights li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+}
+
+.highlight__value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.highlight__label {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.feature-grid h2,
+.section-heading h2,
+.testimonials h2,
+.contact h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.feature-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.feature-grid__items {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+}
+
+.feature-card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.categorie {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.categorie__selector {
+  display: grid;
+  gap: 22px;
+}
+
+.categorie__selector input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.categorie__selector label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgba(23, 107, 135, 0.08);
+  color: var(--color-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.categorie__selector label:hover,
+.categorie__selector label:focus-visible {
+  background: rgba(23, 107, 135, 0.18);
+}
+
+.categorie__selector {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: start;
+}
+
+.categorie__panels {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.categorie__panel {
+  display: none;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  color: var(--color-heading);
+  line-height: 1.6;
+}
+
+.categorie__panel ul {
+  padding-left: 20px;
+  margin: 12px 0 0;
+  color: var(--color-muted);
+}
+
+#tab-verde:checked ~ label[for="tab-verde"],
+#tab-fotovoltaico:checked ~ label[for="tab-fotovoltaico"],
+#tab-pulizia:checked ~ label[for="tab-pulizia"],
+#tab-scavi:checked ~ label[for="tab-scavi"] {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-card);
+}
+
+#tab-verde:checked ~ .categorie__panels #panel-verde,
+#tab-fotovoltaico:checked ~ .categorie__panels #panel-fotovoltaico,
+#tab-pulizia:checked ~ .categorie__panels #panel-pulizia,
+#tab-scavi:checked ~ .categorie__panels #panel-scavi {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.testimonials__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.testimonial {
+  margin: 0;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.testimonial blockquote {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-heading);
+}
+
+.testimonial figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.testimonial .name {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.testimonial .rating {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.contact__card {
+  background: linear-gradient(135deg, rgba(23, 107, 135, 0.92), rgba(15, 79, 99, 0.9));
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact__card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255, 183, 3, 0.3), transparent 60%);
+  pointer-events: none;
+}
+
+.contact__card h2,
+.contact__card p,
+.contact__card .contact__actions {
+  position: relative;
+  z-index: 1;
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.contact__details {
+  margin: 0;
+  display: grid;
+  gap: 20px;
+  padding: 28px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  color: var(--color-muted);
+}
+
+.contact__details dt {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.contact__details dd {
+  margin: 4px 0 0;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.footer-note {
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+  }
+
+  .header-actions {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 40px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 24px 16px 64px;
+  }
+
+  .hero {
+    padding: 32px;
+  }
+
+  .hero__highlights {
+    flex-direction: column;
+  }
+
+  .categorie {
+    padding: 28px;
+  }
+
+  .categorie__panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-header {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hero__actions,
+  .contact__actions {
+    flex-direction: column;
+  }
+
+  .feature-grid__items,
+  .testimonials__list {
+    grid-template-columns: 1fr;
+  }
+
+  .categorie__selector {
+    grid-template-columns: 1fr;
+  }
+}
