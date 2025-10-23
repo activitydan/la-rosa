@@ -18,15 +18,14 @@ body {
   display: flex;
   justify-content: center;
   padding: 30px 20px;
-  transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 .container {
   width: 100%;
   max-width: 900px;
-  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
@@ -53,28 +52,6 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.darkmode-label {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  background: var(--card);
-  border-radius: 50px;
-  width: 60px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 6px;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-
-.darkmode-label span {
-  font-size: 18px;
-  transition: transform 0.3s ease;
 }
 
 /* Categorie */
@@ -172,32 +149,4 @@ input#scavi:checked ~ .descrizioni .scavi {
   border-radius: var(--radius);
   background: linear-gradient(135deg,#fff,#f5f7fa);
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.recensione:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-.recensione .testo { font-style: italic; margin-bottom: 10px; }
-.recensione .autore { font-weight: 600; color: var(--accent-2); margin-bottom: 5px; }
-.recensione .stelle { color: #fbbf24; font-size: 1.2rem; }
-
-/* Footer */
-footer {
-  text-align: center;
-  margin-top: 20px;
-  color: var(--muted);
-}
-
-/* Dark Mode */
-#darkmode-toggle:checked + .container {
-  --bg: #0e1117;
-  --card: #1c1f26;
-  --accent: #4caf50;
-  --accent-2: #1e88e5;
-  --muted: #cbd5e1;
-  color: #f3f4f6;
-  background: var(--bg);
-}
+  transition: transform
