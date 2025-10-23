@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dimarco SRLS — Elettricisti | Fotovoltaico • Verde Pubblico • Scavi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Dark Mode Toggle invisibile -->
+<input type="checkbox" id="darkmode-toggle">
+
+<div class="container">
+
+  <header>
+    <div class="brand">
+      <div class="logo">
+        <img src="images/logo-di-marco.png" alt="Logo La Rosa SRLS">
+      </div>
+      <div>
+        <h1>dimarco SRLS</h1>
+        <p>Elettricisti • Fotovoltaico • Scavi & Bonifiche</p>
+      </div>
+    </div>
+
+    <!-- Pulsante Dark Mode -->
+    <label class="darkmode-label" for="darkmode-toggle" title="Attiva/disattiva modalità scura">
+      <span class="sun">☀️</span>
+      <span class="moon">🌙</span>
+    </label>
+  </header>
+
+  <main>
+
+    <!-- Sezione Categorie -->
+    <section class="categorie">
+      <h2>Categorie di intervento</h2>
+
+      <!-- Radio button e label (fratelli diretti di .descrizioni) -->
+      <input type="radio" id="verde" name="categoria" checked>
+      <label for="verde" class="btn-categoria">🌳 Verde pubblico</label>
+
+      <input type="radio" id="fotovoltaico" name="categoria">
+      <label for="fotovoltaico" class="btn-categoria">☀️ Fotovoltaici</label>
+
+      <input type="radio" id="pulizia" name="categoria">
+      <label for="pulizia" class="btn-categoria">💧 Pulizia pannelli</label>
+
+      <input type="radio" id="scavi" name="categoria">
+      <label for="scavi" class="btn-categoria">🚜 Scavi e bonifiche</label>
+
+      <!-- Contenitore descrizioni -->
+      <div class="descrizioni">
+        <div class="descrizione verde">
+          <h3>🌳 Verde pubblico</h3>
+          <p>Progettazione e manutenzione del verde urbano, potature, impianti di irrigazione e riqualificazione di aree pubbliche. Tutti i lavori vengono eseguiti in sicurezza e nel rispetto delle normative ambientali vigenti.</p>
+        </div>
+        <div class="descrizione fotovoltaico">
+          <h3>☀️ Fotovoltaici</h3>
+          <p>Installazione e manutenzione di impianti fotovoltaici chiavi in mano, gestione pratiche GSE e ottimizzazione dei sistemi per massimizzare la produzione energetica. Servizio completo e professionale.</p>
+        </div>
+        <div class="descrizione pulizia">
+          <h3>💧 Pulizia pannelli</h3>
+          <p>Pulizia professionale dei pannelli solari con detergenti ecologici e sistemi ad acqua osmotizzata. Migliora l'efficienza dell'impianto e ne prolunga la durata nel tempo.</p>
+        </div>
+        <div class="descrizione scavi">
+          <h3>🚜 Scavi e bonifiche</h3>
+          <p>Scavi tecnici, movimento terra e bonifiche ambientali con mezzi certificati. Operiamo in sicurezza rispettando tutte le normative vigenti per garantire un servizio completo e affidabile.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sezione Recensioni -->
+    <section class="recensioni">
+      <h2>💬 Cosa dicono i nostri clienti</h2>
+      <div class="recensioni-container">
+        <div class="recensione">
+          <p class="testo">“Servizio impeccabile per l’installazione dei pannelli fotovoltaici. Puntuali e professionali!”</p>
+          <div class="autore">— Mario Rossi, Roma</div>
+          <div class="stelle">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="recensione">
+          <p class="testo">“Ottimo lavoro di manutenzione del verde pubblico. Squadra efficiente e disponibile.”</p>
+          <div class="autore">— Comune di Latina</div>
+          <div class="stelle">⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="recensione">
+          <p class="testo">“Hanno effettuato la pulizia dei pannelli con grande cura. Produzione aumentata del 10%!”</p>
+          <div class="autore">— Laura Bianchi, Pomezia</div>
+          <div class="stelle">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> dimarco SRLS — Tutti i diritti riservati</p>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

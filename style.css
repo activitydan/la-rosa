@@ -1,0 +1,203 @@
+:root {
+  --accent: #0f9d58;
+  --accent-2: #1565c0;
+  --bg: #f7fafb;
+  --card: #ffffff;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --muted: #6b7280;
+  --transition: all 0.4s ease;
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: #0f1724;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: white;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.darkmode-label {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: var(--card);
+  border-radius: 50px;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.darkmode-label span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Categorie */
+.categorie {
+  background: var(--card);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.btn-categoria {
+  display: inline-block;
+  background: var(--accent-2);
+  color: white;
+  padding: 12px 18px;
+  margin: 5px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.btn-categoria:hover {
+  background: #0c4a99;
+  transform: translateY(-2px);
+}
+
+input#verde:checked + label[for="verde"],
+input#fotovoltaico:checked + label[for="fotovoltaico"],
+input#pulizia:checked + label[for="pulizia"],
+input#scavi:checked + label[for="scavi"] {
+  background: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(15,157,88,0.3);
+}
+
+/* Descrizioni */
+.descrizioni {
+  position: relative;
+  margin-top: 20px;
+  min-height: 250px;
+}
+
+.descrizione {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+input#verde:checked ~ .descrizioni .verde,
+input#fotovoltaico:checked ~ .descrizioni .fotovoltaico,
+input#pulizia:checked ~ .descrizioni .pulizia,
+input#scavi:checked ~ .descrizioni .scavi {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.descrizione h3 { margin-bottom: 12px; }
+.descrizione p { line-height: 1.6; color: #374151; }
+
+/* Recensioni */
+.recensioni {
+  background: var(--card);
+  padding: 40px 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 30px 0;
+  text-align: center;
+}
+
+.recensioni-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.recensione {
+  padding: 20px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg,#fff,#f5f7fa);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recensione:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.recensione .testo { font-style: italic; margin-bottom: 10px; }
+.recensione .autore { font-weight: 600; color: var(--accent-2); margin-bottom: 5px; }
+.recensione .stelle { color: #fbbf24; font-size: 1.2rem; }
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--muted);
+}
+
+/* Dark Mode */
+#darkmode-toggle:checked + .container {
+  --bg: #0e1117;
+  --card: #1c1f26;
+  --accent: #4caf50;
+  --accent-2: #1e88e5;
+  --muted: #cbd5e1;
+  color: #f3f4f6;
+  background: var(--bg);
+}
