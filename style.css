@@ -460,7 +460,7 @@ main {
   justify-content: center;
   gap: 8px;
   position: relative;
-  padding: 12px 20px;
+  padding: 16px 16px;
   padding-left: 44px;
   border-radius: 999px;
   background: var(--color-chip-bg);
@@ -473,11 +473,11 @@ main {
 .categorie__selector label::before {
   content: '➜';
   position: absolute;
-  left: 10px;
+  left: 16px;
   font-size: 1.1rem;
   line-height: 1;
   opacity: 0;
-  transform: translateX(5px);
+  transform: translateX(6px);
   transition: var(--transition);
   color: var(--color-primary);
 }
@@ -743,3 +743,4 @@ main {
     padding-right: 45px;
   }
 }
+
