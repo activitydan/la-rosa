@@ -1,0 +1,101 @@
+:root {
+  --scroll-effect-distance: 48px;
+  --scroll-effect-duration: 650ms;
+  --scroll-effect-delay: 60ms;
+  --scroll-effect-stagger: 110ms;
+  --scroll-effect-ease: cubic-bezier(0.18, 0.88, 0.35, 1);
+}
+
+[data-scroll-effect] {
+  position: relative;
+  opacity: 0;
+  transform: translateY(var(--scroll-effect-distance));
+  transition:
+    opacity var(--scroll-effect-duration) var(--scroll-effect-ease),
+    transform var(--scroll-effect-duration) var(--scroll-effect-ease);
+  will-change: opacity, transform;
+}
+
+[data-scroll-effect] > * {
+  transition-delay: calc(var(--scroll-effect-delay) + var(--scroll-effect-stagger) * (var(--child-index, 0)));
+}
+
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(var(--scroll-effect-distance));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  [data-scroll-effect] {
+    opacity: 1;
+    transform: none;
+    animation-name: scroll-reveal;
+    animation-duration: var(--scroll-effect-duration);
+    animation-timing-function: var(--scroll-effect-ease);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+  }
+
+  [data-scroll-effect] > * {
+    animation-name: scroll-reveal;
+    animation-duration: var(--scroll-effect-duration);
+    animation-timing-function: var(--scroll-effect-ease);
+    animation-fill-mode: both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 40%;
+    animation-delay: calc(var(--scroll-effect-delay) + var(--scroll-effect-stagger) * (var(--child-index, 0)));
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  [data-scroll-effect] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+[data-scroll-effect][data-scroll-effect="from-left"] {
+  transform: translateX(calc(var(--scroll-effect-distance) * -1));
+}
+
+[data-scroll-effect][data-scroll-effect="from-right"] {
+  transform: translateX(var(--scroll-effect-distance));
+}
+
+[data-scroll-effect][data-scroll-effect="from-top"] {
+  transform: translateY(calc(var(--scroll-effect-distance) * -1));
+}
+
+@supports (animation-timeline: view()) {
+  [data-scroll-effect="from-left"],
+  [data-scroll-effect="from-right"],
+  [data-scroll-effect="from-top"] {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-effect],
+  [data-scroll-effect] > * {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    transform: none !important;
+  }
+}
+
+[data-scroll-effect] > *:nth-child(1) { --child-index: 0; }
+[data-scroll-effect] > *:nth-child(2) { --child-index: 1; }
+[data-scroll-effect] > *:nth-child(3) { --child-index: 2; }
+[data-scroll-effect] > *:nth-child(4) { --child-index: 3; }
+[data-scroll-effect] > *:nth-child(5) { --child-index: 4; }
+[data-scroll-effect] > *:nth-child(6) { --child-index: 5; }
+[data-scroll-effect] > *:nth-child(7) { --child-index: 6; }
+[data-scroll-effect] > *:nth-child(8) { --child-index: 7; }
