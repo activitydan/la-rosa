@@ -639,7 +639,10 @@ main {
   color: var(--color-muted);
 }
 
-.contact__details dt {
+.contact__details dt + .cta {
+  margin-top: 10px;
+  display: inline-block;
+}
   font-weight: 700;
   color: var(--color-primary-dark);
 }
@@ -743,6 +746,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
