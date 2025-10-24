@@ -6,12 +6,12 @@
   <title>La Rosa SRLS — Elettricisti | Fotovoltaico • Verde Pubblico • Scavi</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
   <div class="page">
     <header class="site-header">
       <div class="brand">
         <a class="logo" href="#inizio" aria-label="La Rosa SRLS">
-          <img src="Logo azienda fotovoltaica Rosa.png" alt="Logo La Rosa SRLS">
+          <img src="logo-rosa-fotovoltaici.svg" alt="Logo La Rosa Fotovoltaici">
         </a>
         <div class="brand-text">
           <p class="eyebrow">Servizi professionali certificati</p>
@@ -27,10 +27,10 @@
       </nav>
       <div class="header-actions">
         <a class="cta" href="tel:+390773123456">📞 0773 123456</a>
-        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Cambia modalità di visualizzazione">
-          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
-          <span class="theme-toggle__label">Dark mode</span>
-        </button>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Cambia modalità di visualizzazione">␊
+          <span class="theme-toggle__icon" aria-hidden="true">🌙</span>␊
+          <span class="theme-toggle__label">Dark mode</span>␊
+        </button>␊
       </div>
     </header>
 
@@ -202,7 +202,69 @@
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function () {
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+
+    (function () {
+      const storageKey = 'la-rosa-theme';
+      const toggle = document.querySelector('.theme-toggle');
+      if (!toggle) return;
+
+      const icon = toggle.querySelector('.theme-toggle__icon');
+      const label = toggle.querySelector('.theme-toggle__label');
+      const prefersDark = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+      const getStoredTheme = () => {
+        try {
+          return localStorage.getItem(storageKey);
+        } catch (error) {
+          return null;
+        }
+      };
+
+      const storeTheme = (theme) => {
+        try {
+          localStorage.setItem(storageKey, theme);
+        } catch (error) {
+          /* ignore storage errors */
+        }
+      };
+
+      const applyTheme = (theme) => {
+        const isDark = theme === 'dark';
+        document.body.dataset.theme = theme;
+        toggle.setAttribute('aria-pressed', String(isDark));
+        if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+        if (label) label.textContent = isDark ? 'Light mode' : 'Dark mode';
+      };
+
+      const savedTheme = getStoredTheme();
+      const prefersDarkTheme = prefersDark ? prefersDark.matches : false;
+      const initialTheme = savedTheme || (prefersDarkTheme ? 'dark' : 'light');
+      applyTheme(initialTheme);
+
+      toggle.addEventListener('click', () => {
+        const currentTheme = document.body.dataset.theme === 'dark' ? 'dark' : 'light';
+        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        storeTheme(nextTheme);
+      });
+
+      const handlePreferenceChange = (event) => {
+        if (getStoredTheme()) return;
+        applyTheme(event.matches ? 'dark' : 'light');
+      };
+
+      if (prefersDark && typeof prefersDark.addEventListener === 'function') {
+        prefersDark.addEventListener('change', handlePreferenceChange);
+      } else if (prefersDark && typeof prefersDark.addListener === 'function') {
+        prefersDark.addListener(handlePreferenceChange);
+      }
+    })();
   </script>
 </body>
 </html>
