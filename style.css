@@ -104,7 +104,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  column-gap: clamp(24px, 5vw, 72px);
+  column-gap: clamp(16px, 3.5vw, 48px); /* ridotto per avvicinare */
   row-gap: 16px;
   padding: 28px clamp(24px, 6vw, 48px);
   background: var(--color-header-bg);
@@ -143,7 +143,7 @@ a:focus-visible {
   flex-direction: column;
   gap: 6px;
 }
-  
+
 .brand-text .eyebrow {
   margin: 0;
   font-size: 0.75rem;
@@ -164,18 +164,24 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
+/* MENU PRINCIPALE SISTEMATO */
 .main-nav {
   display: inline-flex;
-  justify-content: center;
-  justify-self: center;
-  gap: clamp(18px, 3.5vw, 36px);
+  justify-self: start;     /* sposta a sinistra */
+  align-self: start;       /* sposta in alto */
+  margin-top: 2px;         /* regola fine verticale */
+  margin-left: -6px;       /* regola fine orizzontale */
+  gap: clamp(14px, 2.8vw, 28px);
   font-weight: 600;
 }
 
 .main-nav a {
   text-decoration: none;
   color: var(--color-muted);
-  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;     /* centra il testo e il cerchio */
+  padding: 4px 12px;       /* più sottile per centraggio perfetto */
+  line-height: 1.15;
   border-radius: 999px;
   transition: var(--transition);
 }
@@ -654,7 +660,7 @@ main {
 }
 
 .contact__details dt + .cta {
-  margin-top: 10px;
+  margin-top: 14px;
   display: inline-block;
 }
 
@@ -753,6 +759,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
