@@ -470,7 +470,7 @@ main {
   transition: var(--transition);
 }
 
-.categorie__selector label::before {
+.categorie__selector label::after {
   content: '➜';
   position: absolute;
   right: 20px;
@@ -515,8 +515,8 @@ main {
   color: var(--color-muted);
 }
 
-#tab-verde:checked + label,
-#tab-fotovoltaico:checked + label,
+#tab-verde:label + checked,
+#tab-fotovoltaico:label + checked,
 #tab-pulizia:checked + label,
 #tab-scavi:checked + label {
   background: var(--color-chip-bg);
@@ -743,6 +743,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
