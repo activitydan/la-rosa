@@ -470,10 +470,10 @@ main {
   transition: var(--transition);
 }
 
-.categorie__selector label::after {
+.categorie__selector label::before {
   content: '➜';
   position: absolute;
-  left: 20px;
+  right: 20px;
   font-size: 1.1rem;
   line-height: 1;
   opacity: 0;
@@ -743,6 +743,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
