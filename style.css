@@ -460,8 +460,8 @@ main {
   justify-content: center;
   gap: 8px;
   position: relative;
-  padding: 16px 16px;
-  padding-left: 44px;
+  padding: 14px 22px;
+  padding-left: 34px;
   border-radius: 999px;
   background: var(--color-chip-bg);
   color: var(--color-primary);
@@ -743,4 +743,5 @@ main {
     padding-right: 45px;
   }
 }
+
 
