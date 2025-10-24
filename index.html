@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Rosa SRLS — Elettricisti | Fotovoltaico • Verde Pubblico • Scavi</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="scroll-effects.css">
 </head>
 <body data-theme="light">
   <div class="page">
-    <header class="site-header">
+    <header class="site-header" data-scroll-effect="from-top">
       <div class="brand">
         <a class="logo" href="#inizio" aria-label="La Rosa SRLS">
           <img src="logo-rosa-fotovoltaici.svg" alt="Logo La Rosa Fotovoltaici">
@@ -34,7 +35,7 @@
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" data-scroll-effect>
         <div class="hero__content">
           <p class="hero__eyebrow">Operativi nel Lazio e nel Centro Italia</p>
           <h2>Energia, ambiente e infrastrutture gestite da un unico partner</h2>
@@ -60,9 +61,9 @@
         </ul>
       </section>
 
-      <section id="perche-noi" class="feature-grid">
+      <section id="perche-noi" class="feature-grid" data-scroll-effect="from-left">
         <h2>Perché scegliere La Rosa SRLS</h2>
-        <div class="feature-grid__items">
+        <div class="feature-grid__items" data-scroll-effect>
           <article class="feature-card">
             <h3>Squadre certificate</h3>
             <p>Personale qualificato e aggiornato sulle norme CEI, con mezzi e attrezzature di proprietà per garantire interventi rapidi e sicuri.</p>
@@ -78,13 +79,13 @@
         </div>
       </section>
 
-      <section id="categorie" class="categorie">
+      <section id="categorie" class="categorie" data-scroll-effect="from-right">
         <div class="section-heading">
           <h2>Categorie di intervento</h2>
           <p>Scegli un ambito per vedere cosa possiamo fare per te.</p>
         </div>
 
-        <div class="categorie__selector" role="tablist" aria-label="Categorie di intervento">
+        <div class="categorie__selector" role="tablist" aria-label="Categorie di intervento" data-scroll-effect>
           <input type="radio" id="tab-verde" name="categoria" checked>
           <label for="tab-verde" role="tab" aria-controls="panel-verde">🌳 Verde pubblico</label>
 
@@ -97,7 +98,7 @@
           <input type="radio" id="tab-scavi" name="categoria">
           <label for="tab-scavi" role="tab" aria-controls="panel-scavi">🚜 Scavi e bonifiche</label>
 
-          <div class="categorie__panels">
+          <div class="categorie__panels" data-scroll-effect>
             <article id="panel-verde" class="categorie__panel" role="tabpanel">
               <h3>🌳 Verde pubblico</h3>
               <p>Progettazione, potature, irrigazione e riqualificazione di aree urbane. Lavoriamo in quota in sicurezza, gestendo cantieri anche in contesti ad alta affluenza.</p>
@@ -138,9 +139,9 @@
         </div>
       </section>
 
-      <section id="recensioni" class="testimonials">
+      <section id="recensioni" class="testimonials" data-scroll-effect>
         <h2>💬 Cosa dicono i nostri clienti</h2>
-        <div class="testimonials__list">
+        <div class="testimonials__list" data-scroll-effect>
           <figure class="testimonial">
             <blockquote>“Installazione impeccabile del nuovo impianto fotovoltaico. Hanno gestito pratiche e collaudo senza intoppi.”</blockquote>
             <figcaption>
@@ -168,8 +169,8 @@
         </div>
       </section>
 
-      <section id="contatti" class="contact">
-        <div class="contact__card">
+      <section id="contatti" class="contact" data-scroll-effect="from-left">
+        <div class="contact__card" data-scroll-effect>
           <h2>Richiedi un sopralluogo gratuito</h2>
           <p>Raccontaci le tue esigenze: prepareremo un piano d'azione e un preventivo dettagliato entro 48 ore.</p>
           <div class="contact__actions">
@@ -177,7 +178,7 @@
             <a class="btn btn--ghost" href="mailto:info@larosasrls.it">Scrivici una mail</a>
           </div>
         </div>
-        <dl class="contact__details">
+        <dl class="contact__details" data-scroll-effect="from-right">
           <div>
             <dt>Email</dt>
             <dd><a href="mailto:info@larosasrls.it">info@larosasrls.it</a></dd>
@@ -194,7 +195,7 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" data-scroll-effect>
       <p>© <span id="year"></span> La Rosa SRLS — Tutti i diritti riservati</p>
       <p class="footer-note">Iscrizione Albo Gestori Ambientali • Certificazioni SOA categorie OS30, OG3</p>
     </footer>
@@ -269,5 +270,6 @@
   </script>
 </body>
 </html>
+
 
 
