@@ -3,7 +3,7 @@
 :root {
   --color-primary: #176b87;
   --color-primary-dark: #0f4f63;
-  --color-accent: #f3ff57;
+  --color-accent: #f6e811;
   --color-surface: #ffffff;
   --color-muted: #5f6c7b;
   --color-background: #f1f5f9;
@@ -844,6 +844,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
