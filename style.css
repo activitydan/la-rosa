@@ -639,16 +639,21 @@ main {
   color: var(--color-muted);
 }
 
-.contact__details dt + .cta {
-  margin-top: 10px;
-  display: inline-block;
-}
+
+.contact__details dt {
   font-weight: 700;
   color: var(--color-primary-dark);
+  margin: 0;
 }
 
 .contact__details dd {
-  margin: 0px 0 0;
+  margin: 0;
+  margin-inline-start: 0;
+}
+
+.contact__details dt + .cta {
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .site-footer {
@@ -746,6 +751,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
