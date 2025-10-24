@@ -104,7 +104,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  column-gap: clamp(16px, 3.5vw, 48px); /* ridotto per avvicinare */
+  column-gap: clamp(16px, 3.5vw, 48px);
   row-gap: 16px;
   padding: 28px clamp(24px, 6vw, 48px);
   background: var(--color-header-bg);
@@ -164,13 +164,13 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
-/* MENU PRINCIPALE SISTEMATO */
+/* MENU PRINCIPALE */
 .main-nav {
   display: inline-flex;
   justify-self: start;     /* sposta a sinistra */
   align-self: start;       /* sposta in alto */
-  margin-top: 2px;         /* regola fine verticale */
-  margin-left: -6px;       /* regola fine orizzontale */
+  margin-top: 4px;         /* regola fine verticale */
+  margin-left: -12px;       /* regola fine orizzontale */
   gap: clamp(14px, 2.8vw, 28px);
   font-weight: 600;
 }
@@ -759,6 +759,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
