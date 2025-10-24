@@ -286,7 +286,7 @@ main {
   flex-direction: column;
   gap: clamp(18px, 2.6vw, 28px);
   max-width: 620px;
-}␊
+}
 
 .hero__eyebrow {
   margin: 0;
@@ -315,9 +315,9 @@ main {
   flex-wrap: wrap;
   gap: clamp(16px, 3vw, 30px);
   margin-top: 16px;
-}␊
-␊
-.btn {␊
+}
+
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -327,7 +327,7 @@ main {
   font-weight: 700;
   text-decoration: none;
   transition: var(--transition);
-}␊
+}
 
 .btn--primary {
   background: var(--color-accent);
@@ -436,7 +436,7 @@ main {
   padding: 36px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
-}␊
+}
 
 .section-heading p {
   margin: 0;
@@ -470,10 +470,10 @@ main {
   transition: var(--transition);
 }
 
-.categorie__selector label::after {
+.categorie__selector label::before {
   content: '➜';
   position: absolute;
-  right: 20px;
+  left: 20px;
   font-size: 1.1rem;
   line-height: 1;
   opacity: 0;
@@ -740,8 +740,9 @@ main {
   }
 
   .categorie__selector label {
-    padding-right: 36px;
+    padding-right: 45px;
   }
 }
+
 
 
