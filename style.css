@@ -3,7 +3,7 @@
 :root {
   --color-primary: #176b87;
   --color-primary-dark: #0f4f63;
-  --color-accent: #a5d9fd;
+  --color-accent: #f3ff57;
   --color-surface: #ffffff;
   --color-muted: #5f6c7b;
   --color-background: #f1f5f9;
@@ -59,7 +59,7 @@ body {
 body[data-theme='dark'] {
   --color-primary: #54d6ff;
   --color-primary-dark: #2c9fd0;
-  --color-accent: #ffe066;
+  --color-accent: #a5d9fd;
   --color-surface: #0b1a2a;
   --color-muted: #cbd5f5;
   --color-background: #030712;
@@ -844,6 +844,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
