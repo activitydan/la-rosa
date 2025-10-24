@@ -169,8 +169,8 @@ a:focus-visible {
   display: inline-flex;
   justify-self: start;     /* sposta a sinistra */
   align-self: start;       /* sposta in alto */
-  margin-top: 4px;         /* regola fine verticale */
-  margin-left: -12px;       /* regola fine orizzontale */
+  margin-top: 20px;         /* regola fine verticale */
+  margin-left: -30px;       /* regola fine orizzontale */
   gap: clamp(14px, 2.8vw, 28px);
   font-weight: 600;
 }
@@ -759,6 +759,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
