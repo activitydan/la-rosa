@@ -170,12 +170,11 @@ a:focus-visible {
   min-width: 76px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow-soft);
 }
 
 .logo img {
   display: block;
-  height: 76px;
+  height: 100px;
   width: auto;
 }
 
@@ -842,6 +841,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
