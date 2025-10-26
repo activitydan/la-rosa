@@ -37,7 +37,7 @@ body {
   font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background:
     radial-gradient(circle at top right, rgba(23, 107, 135, 0.18), transparent 50%),
-    radial-gradient(circle at bottom left, rgba(255, 183, 3, 0.16), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(189, 236, 182, 1.0), transparent 25%),
     var(--color-background);
  color: var(--color-heading);
   min-height: 100vh;
@@ -250,7 +250,6 @@ a:focus-visible {
 
 @media (min-width: 720px) {
   .site-header {
-    grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas: "brand nav actions";
     align-items: center;
     column-gap: clamp(18px, 3.5vw, 48px);
@@ -820,7 +819,7 @@ main {
   }
 
   .logo img {
-    height: 64px;
+    height: 105px;
   }
 
   .hero__actions,
@@ -841,6 +840,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
