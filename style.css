@@ -168,11 +168,9 @@ a:focus-visible {
   justify-content: center;
   padding: 6px;
   min-width: 76px;
-  max-height: 88px;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  background: #02141a;
 }
 
 .logo img {
@@ -844,6 +842,7 @@ main {
     padding-right: 45px;
   }
 }
+
 
 
 
