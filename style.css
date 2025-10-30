@@ -24,10 +24,6 @@
   --transition: all 0.3s ease;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -840,25 +836,3 @@ main {
     padding-right: 45px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
